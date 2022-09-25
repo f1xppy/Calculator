@@ -1,9 +1,19 @@
 import Calc
+import ExceptionHandler as EH
 
 
 def RunApp():
-    s = input("Введите выражение: ")
+    ch = 0;
+    while ch != 1:
+        s = input("Введите выражение: ")
+        if s != "":
+            ch = EH.StartExceptionHandling(s)
+        else:
+            ch = 1
+    ch = 0;
+
     ans = 0
+    ans1 = Calc.Calculate(0, 0, "")
     sign = ""
     a = 0
     b = 0
@@ -16,12 +26,26 @@ def RunApp():
             a = b
             b = 0
     ans = Calc.Calculate(a, b, sign)
-    s = input(str(ans))
+    if ans == ans1:
+        ans = "0"
+    else:
+        while ch != 1:
+            s = input(str(ans))
+            if s != "":
+                ch = EH.ManeExceptionHandling(s)
+            else:
+                ch = 1
 
-    while s != "":
-        sign = Calc.GetSign(s)
-        a = Calc.GetNumber(s)
-        ans = Calc.Calculate(ans, a, sign)
-        s = input(str(ans))
+        while s != "":
+            ch = 0
+            sign = Calc.GetSign(s)
+            a = Calc.GetNumber(s)
+            ans = Calc.Calculate(ans, a, sign)
+            while ch != 1:
+                s = input(str(ans))
+                if s != "":
+                    ch = EH.ManeExceptionHandling(s)
+                else:
+                    ch = 1
 
     print("Ответ: " + str(ans))
