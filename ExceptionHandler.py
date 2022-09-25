@@ -1,9 +1,9 @@
 def ManeExceptionHandling(s):
     if (s[0] != "+") and (s[0] != "-") and (s[0] != "*") and (s[0] != "/") or ((s[1] < "0") or (s[1] > "9")):
         print("Ошибка")
-        return (0)
+        return 0
     else:
-        return (1)
+        return 1
 
 
 def StartExceptionHandling(s):
@@ -16,6 +16,6 @@ def StartExceptionHandling(s):
             k2 += 1
     if (len(s) - k1 != 1) or (k2 != 1):
         print("Ошибка")
-        return (0)
+        return 0
     else:
-        return (1)
+        return 1

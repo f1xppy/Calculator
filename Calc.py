@@ -1,7 +1,7 @@
 def GetSign(s):
     for i in range(0, len(s)):
         if (s[i] < "0") or (s[i] > "9"):
-            return (s[i])
+            return s[i]
 
 
 def GetNumber(s):
@@ -9,15 +9,15 @@ def GetNumber(s):
     for i in range(0, len(s)):
         if (s[i] >= "0") and (s[i] <= "9"):
             b = b * 10 + int(s[i])
-    return (b)
+    return b
 
 
 def Calculate(a, b, sign):
     if sign == "+":
-        return (a + b)
+        return a + b
     if sign == "-":
-        return (a - b)
+        return a - b
     if sign == "*":
-        return (a * b)
+        return a * b
     if sign == "/":
-        return (a / b)
+        return a / b

@@ -3,16 +3,15 @@ import ExceptionHandler as EH
 
 
 def RunApp():
-    ch = 0;
+    ch = 0
     while ch != 1:
         s = input("Введите выражение: ")
         if s != "":
             ch = EH.StartExceptionHandling(s)
         else:
             ch = 1
-    ch = 0;
+    ch = 0
 
-    ans = 0
     ans1 = Calc.Calculate(0, 0, "")
     sign = ""
     a = 0
